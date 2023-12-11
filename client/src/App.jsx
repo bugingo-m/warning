@@ -44,6 +44,7 @@ import {loader as singleTestimonyLoader} from './pages/SingleTestimony'
 import {action as deleteTestimonyAction} from './pages/DeleteTestimony'
 import {loader as editTestimonyLoader} from './pages/EditTestimony'
 import {action as editTestimonyAction} from './pages/EditTestimony'
+import {action as deleteMyQuestionAction} from './pages/DeleteMyQuestion'
 const router = createBrowserRouter([
   {
     path:'/',
@@ -111,6 +112,7 @@ const router = createBrowserRouter([
             action:deleteQuestionAction
             
           },
+          
           {
             path:'delete-testimony/:id',
             // element:<DeleteTestimony/>,
@@ -120,6 +122,11 @@ const router = createBrowserRouter([
             path:'my-questions',
             element:<MyQuestions/>,
             loader:myQuestionsLoader,
+          },
+          {
+            path:'delete-myquestion/:id',
+            // element:<DeleteQuestion/>,
+            action:deleteMyQuestionAction
           },
           {
             index:true,

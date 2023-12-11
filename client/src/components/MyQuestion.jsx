@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import Wrapper from '../assets/wrappers/Question'
 
-import { Link } from 'react-router-dom'
+import { Link,Form } from 'react-router-dom'
 import{AiOutlineEdit,AiOutlineDelete} from 'react-icons/ai'
 import{MdQuestionAnswer} from 'react-icons/md'
 import {TfiAngleDoubleRight,TfiAngleDoubleLeft} from 'react-icons/tfi'
@@ -40,7 +40,11 @@ const MyQuestion = ({_id,question,answer,createdAt}) => {
       <div className="action-btns">
         
         <Link to={`/dashboard/edit-question/${_id}`} className='edit'><AiOutlineEdit/>edit</Link>
-        <Link to={`/dashboard/delete-question/${_id}`} className='delete' ><AiOutlineDelete/>delete</Link>
+        <Form method='post' action={`/dashboard/delete-myquestion/${_id}`}>
+          <button type='submit'  className='delete' >
+            <AiOutlineDelete/>delete</button>
+
+        </Form>
       </div> 
       
     </Wrapper>

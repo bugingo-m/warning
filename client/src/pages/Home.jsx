@@ -136,7 +136,7 @@ const Home = () => {
 				so will be the coming of the Son of Man. For in those days before the flood, they were eating and drinking, marrying and giving in marriage, until the day Noah entered the ark. And they did not understand until the flood 
 				came and swept them all away. 
 				So shall it be at the coming of the Son of Man. Matthew 24:37-39. </strong></em>
-				To understand the reality of this event please <Link to='/register'>register</Link> if you are new or <Link>login</Link> if you already have an account and then you will be able to read testimonies 
+				To understand the reality of this event please <Link to='/register'>register</Link> if you are new or <Link to='/login'>login</Link> if you already have an account and then you will be able to read testimonies 
 				from people around the world who have already experienced <em>illumination of conscience</em>. You will also be able to 
 				ask questions. May the Almighty God bless us.</p>
     </Wrapper>

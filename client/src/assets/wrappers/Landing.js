@@ -68,11 +68,22 @@ const Wrapper = styled.main`
 
 .nav-title{
 	color:var(--yellow-60);
+	display:none;
+	@media (min-width:992px){
+		display:block;
+	}
 	
+}
+.nav-title-1{
+	color:var(--yellow-60);
+	@media (min-width:992px){
+		display:none;
+	}
 }
 .nav-subtitle{
 	color:#fff;
-	padding-left:1rem;
+	/* padding-left:1rem; */
+	padding-bottom:1rem;
 	font-size:0.78rem;
 }
 .full-page{

@@ -30,6 +30,8 @@ const Landing = () => {
 				<article className='nav-logo'>
 					<div className='warning'>
 						<h2 className='nav-title'>The Great Warning </h2>
+						<h2 className='nav-title-1'>Warning </h2>
+
 						<p className='nav-subtitle'>&ldquo;illumination of coinscience&rdquo;</p>
 						
 					</div>

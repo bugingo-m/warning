@@ -1,6 +1,7 @@
 import React from 'react'
 import Wrapper from '../assets/wrappers/QuestionsContainer'
 import Question from './Question'
+import { DeleteDialog } from '.'
 import PaginateQuestions from './PaginateQuestions'
 import { useAllQuestionsContext } from '../pages/AllQuestions'
 const QuestionsContainer = () => {
@@ -19,6 +20,7 @@ const QuestionsContainer = () => {
       {questions.map((question)=>{
         return(
           <Question key={question._id} {...question} user={user}/>
+          
         )
       })}
       {(numOfPages>1)&&<PaginateQuestions/>}

@@ -1,18 +1,23 @@
 import React,{useState} from 'react'
 import Wrapper from '../assets/wrappers/Question'
 
-import { Link } from 'react-router-dom'
+import { Form, Link } from 'react-router-dom'
 import{AiOutlineEdit,AiOutlineDelete} from 'react-icons/ai'
 import{MdQuestionAnswer} from 'react-icons/md'
 import {TfiAngleDoubleRight,TfiAngleDoubleLeft} from 'react-icons/tfi'
-
+import { DeleteDialog } from '.'
 import { useDashboardContext } from '../pages/Dashboard'
 import day from 'dayjs'
 import advancedFormat from 'dayjs/plugin/advancedFormat'
 day.extend(advancedFormat)
+
+
 const Question = ({_id,question,answer,createdAt,user}) => {
   const [more,setMore] = useState(false);
-  
+  const {dialog,
+    showDialog,
+    deleteQuestion,
+    closeDialog,} = useDashboardContext()
     const isAdmin = user.role === 'admin'
     const date = day(createdAt).format('MMM Do, YYYY')
     let minlength = 300;
@@ -20,10 +25,11 @@ const Question = ({_id,question,answer,createdAt,user}) => {
     const showText=(id)=>{
       setMore(!more)
     }
-    console.log( _id );
+    
+    
   return (
     <Wrapper>
-      
+      <DeleteDialog id={_id} type='question'/>
       <p className='qn'>{question}</p>
       <div className="date">
         <p><span>ASKED ON</span> {date} </p>
@@ -40,8 +46,13 @@ const Question = ({_id,question,answer,createdAt,user}) => {
       {isAdmin && <div className="action-btns">
         <Link to={`/dashboard/answer/${_id}`} className='answer'><span><MdQuestionAnswer/></span>answer</Link>
         <Link to={`/dashboard/edit-question/${_id}`} className='edit'><AiOutlineEdit/>edit</Link>
-        <Link to={`/dashboard/delete-question/${_id}`} className='delete' >
-          <AiOutlineDelete/>delete</Link>
+        {/* <Link to={`/dashboard/delete-question/${_id}`} className='delete' >
+          <AiOutlineDelete/>delete</Link> */}
+        <Form method='post' action={`/dashboard/delete-question/${_id}`}>
+          <button type='submit' className='delete' >
+          <AiOutlineDelete/>delete</button>
+        </Form>
+        
       </div> }
       
     </Wrapper>

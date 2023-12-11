@@ -107,13 +107,13 @@ const router = createBrowserRouter([
           },
           {
             path:'delete-question/:id',
-            element:<DeleteQuestion/>,
+            // element:<DeleteQuestion/>,
             action:deleteQuestionAction
             
           },
           {
             path:'delete-testimony/:id',
-            element:<DeleteTestimony/>,
+            // element:<DeleteTestimony/>,
             action:deleteTestimonyAction 
           },
           {

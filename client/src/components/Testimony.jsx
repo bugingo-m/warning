@@ -1,6 +1,6 @@
 import React from 'react'
 import Wrapper from '../assets/wrappers/Testimony'
-import { Link,useOutletContext } from 'react-router-dom'
+import { Link,useOutletContext,Form } from 'react-router-dom'
 import{AiOutlineEdit,AiOutlineDelete} from 'react-icons/ai'
 import {BsArrowRight} from 'react-icons/bs'
 
@@ -31,8 +31,11 @@ const Testimony = ({_id,person,country,biography,odd}) => {
         {isAdmin && (
           <div className="action-btns">
           <Link to={`/dashboard/edit-testimony/${_id}`} className='edit'><AiOutlineEdit/>edit</Link>
-          <Link to={`/dashboard/delete-testimony/${_id}`} className='delete' ><AiOutlineDelete/>
-          delete</Link>
+          <Form method='post' action={`/dashboard/delete-testimony/${_id}`}>
+            <button type='submit'  className='delete' ><AiOutlineDelete/>
+            delete</button>
+          </Form>
+          
         </div>
         )}
         

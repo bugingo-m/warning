@@ -20,6 +20,7 @@ const Dashboard = () => {
   
   const[showSidebar,setShowSidebar] = useState(false)
   const[dialog,setDialog] = useState(false)
+  const[deleteItem,setDeleteItem] = useState(false)
   const toggleSidebar =()=>{
     setShowSidebar(!showSidebar)
   }
@@ -35,6 +36,14 @@ const Dashboard = () => {
     await customFetch.get('/auth/logout')
     toast.success('Logged out...')
   }
+  const deleteQuestion =async(id)=>{
+    setDeleteItem(true)
+    await customFetch.delete(`/questions/${id}`)
+    closeDialog()
+    setDeleteItem(false)
+    navigate('/dashboard/all-questions')
+    toast.success('question deleted successfully')
+  }
   
   return (
     
@@ -47,6 +56,7 @@ const Dashboard = () => {
       dialog,
       showDialog,
       closeDialog,
+      deleteQuestion
       }}>
         <Wrapper>
           <div className="dashboard">

@@ -1,3 +1,4 @@
+import mongoose from 'mongoose'
 import Question from '../model/questionModel.js'
 import { StatusCodes } from 'http-status-codes'
 
@@ -31,6 +32,14 @@ export const updateQuestion = async(req,res)=>{
 }
 export const deleteQuestion = async(req,res)=>{
     const {id} = req.params 
+
+    // const question = await Question.findOne({
+    //     _id:new mongoose.Types.ObjectId(id)
+    // })
     const deletedQuestion = await Question.findByIdAndDelete(id)
+    // if(!question){
+    //     return res.status(StatusCodes.NOT_FOUND).json({msg:`no question with id ${id}`})
+    // }
+    // await question.deleteOne()
     res.status(StatusCodes.OK).json({msg:'question deleted successfully'})
 }

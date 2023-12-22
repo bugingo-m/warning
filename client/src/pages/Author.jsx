@@ -1,15 +1,6 @@
 import React from 'react'
 
-const full =`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ante 
-risus, lacinia eu sapien sit amet, mattis cursus lacus. Donec vehicula, 
-quam in dictum rutrum, eros leo ultricies elit, vel euismod felis dui nec leo. 
-Duis hendrerit sem at ipsum dictum consectetur. Nulla facilisi. Sed tristique 
-pulvinar dolor, dictum feugiat odio vehicula et. In non massa molestie, 
-dignissim felis a, iaculis ante. Duis pharetra orci at erat varius mollis.>> 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ante risus, 
-lacinia eu sapien sit amet, mattis cursus lacus. Donec vehicula, quam in dictum rutrum, eros leo ultricies elit, vel euismod felis dui nec leo. Duis hendrerit sem at ipsum dictum consectetur. Nulla facilisi. Sed tristique pulvinar dolor, dictum feugiat odio vehicula et. In non massa 
-molestie, dignissim felis a, iaculis ante. Duis pharetra orci at erat varius mollis.`
-const newFull = full.split('>>')
+
 
 const Author = () => {
   return (
@@ -20,7 +11,7 @@ const Author = () => {
         I would like to remain anonymous such 
         that attention is given to <strong>Jesus</strong> and His message.</p>
         <p>Am not a mystic, am not a prophet, am not a visionary, am not a locutionist 
-          , neither am I a prophet nor a conspiracy theorist. Am simply unworthy servant and 
+          , neither am I a conspiracy theorist. Am simply unworthy servant and 
           above all a fat sinner who has been chosen by the Almighty Father to win Him souls 
           in this time which is so confusing, the time where we praise darkness not light, where the 
           abnormal is considered to be normal as well as bad is taken to be good. 
